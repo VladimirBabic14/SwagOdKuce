@@ -22,8 +22,6 @@ public class CheckOutStepOnePage extends BasePage {
     @FindBy(className = "complete-header")
     WebElement getText;
 
-    @FindBy(css = ".error h3")
-    WebElement errorMessage;
 
     @FindBy(className = "summary_subtotal_label")
     static
@@ -32,6 +30,9 @@ public class CheckOutStepOnePage extends BasePage {
     @FindBy(css = ".summary_info_label.summary_total_label")
     static
     WebElement total;
+
+    @FindBy(id = "continue-shopping")
+    WebElement ButtonContinue;
 
     public CheckOutStepOnePage(ChromeDriver driver) {
         this.driver = driver;
@@ -53,10 +54,6 @@ public class CheckOutStepOnePage extends BasePage {
         return getText.getText();
     }
 
-    public String getError() {
-        return errorMessage.getText();
-    }
-
     public String getTotal()
     {
         return total.getText();
@@ -64,5 +61,10 @@ public class CheckOutStepOnePage extends BasePage {
     public String getItemTotal()
     {
         return priceTotal.getText();
+    }
+
+    public void setButtonContinue()
+    {
+     ButtonContinue.click();
     }
 }

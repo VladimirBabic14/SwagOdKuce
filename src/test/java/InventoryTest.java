@@ -34,10 +34,27 @@ public class InventoryTest extends BaseTest
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
         Assert.assertEquals(inventoryPage.getCartNumber(),"3");
 
+
     }
 
     @Test
-    public void Totalprice()
+    public void RemovingProducts()
+    {
+        inventoryPage.clickBoltShirt();
+        inventoryPage.clickLight();
+        inventoryPage.clickCart();
+        cartPage.removeBoltShirt.click();
+        cartPage.removeLight.click();
+        checkOutStepOnePage.setButtonContinue();
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
+        Assert.assertEquals(inventoryPage.cartNumber(),"");
+
+
+
+    }
+
+    @Test
+    public void TotalPrice()
     {
         inventoryPage.clickBoltShirt();
         inventoryPage.clickLight();
