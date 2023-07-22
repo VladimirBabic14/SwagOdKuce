@@ -8,8 +8,12 @@ public class CartPage extends BasePage
     @FindBy(id = "checkout")
     WebElement checkout;
 
-    @FindBy(id = "continue")
-    WebElement continueStepTwo;
+    @FindBy(id = "remove-sauce-labs-bolt-t-shirt")
+    WebElement removeBoltShirt;
+
+    @FindBy(id = "remove-sauce-labs-bike-light")
+    WebElement removeLight;
+
 
 
     public CartPage(ChromeDriver driver)
@@ -24,8 +28,7 @@ public class CartPage extends BasePage
         checkout.click();
     }
 
-    public void clickContinueStepTwo()
-    {
-        continueStepTwo.click();
-    }
+
+
+
 }

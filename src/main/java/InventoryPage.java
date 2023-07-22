@@ -26,6 +26,9 @@ public class InventoryPage extends BasePage
     @FindBy(className = "inventory_item_price")
     WebElement price;
 
+    @FindBy(className = "shopping_cart_link")
+    WebElement cartLink;
+
     public InventoryPage(ChromeDriver driver)
     {
         this.driver = driver;
@@ -46,6 +49,11 @@ public class InventoryPage extends BasePage
     public String getCartNumber()
     {
         return cart.getText();
+    }
+
+    public String cartNumber()
+    {
+    return cartLink.getText();
     }
 
     public void sortProduct(String text)
